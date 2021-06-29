@@ -97,7 +97,8 @@ los pedidos sin perder la vida a manos de los ninjas enemigos.
 == Implementación
 
 *Clase Sakura*
-	```java
+
+```java
 		
 public class Sakura {
 
@@ -268,7 +269,7 @@ public class Sakura {
 	}
 }
 		
-	```
+```
 
 
 
