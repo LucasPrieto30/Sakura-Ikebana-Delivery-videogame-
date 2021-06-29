@@ -34,7 +34,7 @@ public class Juego extends InterfaceJuego {
 	public Juego() {
 
 		// Inicializa el objeto entorno
-		this.entorno = new Entorno(this, "Sakura Ikebana Delivery - Grupo 7", 800, 600);
+		this.entorno = new Entorno(this, "Sakura Ikebana Delivery", 800, 600);
 		sakura = new Sakura(entorno.ancho() / 2, entorno.alto() / 2, -Math.PI / 2);
 		ninjas = new Ninja[6];
 		ninjasReapariciones = new double[3][3];
