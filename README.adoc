@@ -1,0 +1,140 @@
+= Sakura Haruno
+
+:title-page:
+:numbered:
+:source-highlighter: coderay
+:tabsize: 4
+
+// legajos
+
+== Introducción
+
+Sakura Haruno junto a su amiga de la infancia Ino Yamanaka, tienen un negocio de arreglos
+florales típicos japoneses (ikebana). Ino se encarga de preparar los arreglos florales, y Sakura
+se encarga del delivery de los mismos.
+
+La florería Yamanaka-Haruno está ubicada en una aldea ninja, que suele ser atacada por
+ninjas enemigos. Esto complica el trabajo de Sakura que debe entregar los pedidos evitando
+y combatiendo a los ninjas enemigos.
+
+El objetivo de este trabajo es desarrollar un videojuego en el cual Sakura entregue
+los pedidos sin perder la vida a manos de los ninjas enemigos.
+
+== Descripción
+
+- *Métodos de la clase Sakura*
+   
+ * `mirarIzquierda()`: La dirección de Sakura se establece en Math.PI.
+ 
+ * `mirarDerecha()`: La dirección de Sakura se establece en 0.
+
+ * `mirarArriba()`: La dirección de Sakura se establece en - Math.PI / 2.
+ 
+ * `mirarAbajo()`: La dirección de Sakura se establece en Math.PI / 2.
+
+ * `dibujar()`: Dibuja a Sakura en el entorno, dependiendo de la dirección en la que se encuentre se va a dibujar de distinta manera.
+
+ * `mover()`: Sakura se mueve en el entorno hacia la dirección elegida.
+
+ * `colisionoConElEntorno()`: Este boolean devuelve true si Sakura choca con los bordes del entorno.
+
+ * `colisionoConNinja()`: Este boolean devuelve true si Sakura choca con un ninja.
+
+ * `llegoACasaDelPedido()`: Este boolean devuelve `true` si Sakura pasa por en frente de la casa donde tiene que llevar el pedido.
+
+ * `salioDeCalle()`: El método verifica si Sakura se intenta mover por
+ fuera de las calles, si es así devuelve true. Esta compuesto por dos
+ partes, una verifica si sale de las calles verticales, es decir por
+ los costados. Y la otra verifica si sale de las calles horizontales,
+ es decir por arriba o abajo de las calles. En cada caso, se verifica también que no esté en una intersección entre calles, ya que en ese caso sí podría avanzar y moverse.
+
+ * `noAvanzar()`: Limita el movimiento de Sakura dependiendo de si está saliendo por los bordes del entorno o si está saliendo de las calles.
+
+ * `correr()`: La velocidad de Sakura se establece en 4.
+
+ * `caminar()`: La velocidad de Sakura se establece en 2.
+
+ * `lanzarRasengan()`: Crea y retorna un rasengan que va hacia la última dirección en la que se movió Sakura.
+
+ - *Métodos de la clase Ninja*
+   
+ * `dibujar()`: Dibuja a un ninja en el entorno, dependiendo de la dirección en la que se encuentre se va a dibujar de distinta manera.
+
+ * `mover()`: El ninja se mueve en el entorno siempre en la misma dirección. Si choca contra los bordes del entorno, reaparece del lado contrario.
+
+ * `getDireccion()`: Se utiliza en la clase Juego, para la reaparición de los ninjas.
+
+ * `getX()`: Se utiliza en los métodos `colisionoConNinja` en la clase Sakura y en la clase Rasengan.
+
+ * `getY()`: Se utiliza en los métodos `colisionoConNinja` en la clase Sakura y en la clase Rasengan.
+
+ - *Métodos de la clase Casa*
+   
+ * `dibujar()`: Dibuja una casa roja o una casa azul en el entorno, dependiendo de su número.
+
+ * `marcar()`: Dibuja una flecha encima de la casa elegida. En las casas que están en el borde superior de la pantalla la flecha que marca la casa se dibuja desde abajo para que no salga de la pantalla.
+
+ * `getX()`: Se utiliza en el método `llegoACasaDelPedido` en la clase Sakura.
+
+ * `getY()`: Se utiliza en el método `llegoACasaDelPedido` en la clase Sakura.
+
+ - *Método de la clase Calle*
+   
+ * `dibujar()`: Dibuja un rectángulo en el entorno, representando una calle.
+
+ - *Métodos de la clase Rasengan*
+   
+ * `dibujar()`: Dibuja el rasengan en el entorno.
+
+ * `mover()`: El rasengan se mueve en el entorno hacia la dirección elegida.
+
+ * `colisionoConElEntorno()`: Este boolean devuelve true si el rasengan choca con los bordes del entorno.
+ 
+ * `colisionoConLaCiudad()`: Este boolean devuelve true si el rasengan se sale de las calles.
+ 
+ * `colisionoConNinja()`: Este boolean devuelve true si el rasengan choca con un ninja.
+
+== Implementación
+
+*Clase Sakura*
+
+[source,java]
+----
+include::src/juego/Sakura.java[]
+----
+
+*Clase Ninja*
+
+[source,java]
+----
+include::src/juego/Ninja.java[]
+----
+
+*Clase Casa*
+
+[source,java]
+----
+include::src/juego/Casa.java[]
+----
+
+*Clase Calle*
+
+[source,java]
+----
+include::src/juego/Calle.java[]
+----
+
+*Clase Rasengan*
+
+[source,java]
+----
+include::src/juego/Rasengan.java[]
+----
+
+*Clase Juego*
+
+[source,java]
+----
+include::src/juego/Juego.java[]
+----
+
