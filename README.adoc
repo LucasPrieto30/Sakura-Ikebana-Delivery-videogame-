@@ -97,15 +97,15 @@ los pedidos sin perder la vida a manos de los ninjas enemigos.
 == Implementación
 
 *Clase Sakura*
-		```java
+	```java
 		
-ifndef::env-github[]
-include::src/juego/Sakura.java[]
-endif::[]
-ifdef::env-github[]
-endif::[]
+	ifndef::env-github[]
+	include::src/juego/Sakura.java[]
+	endif::[]
+	ifdef::env-github[]
+	endif::[]
 		
-		```
+	```
 
 
 
