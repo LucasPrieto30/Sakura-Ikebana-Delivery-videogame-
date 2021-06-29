@@ -98,10 +98,13 @@ los pedidos sin perder la vida a manos de los ninjas enemigos.
 
 *Clase Sakura*
 
-[source,java]
-----
+ifndef::env-github[]
 include::src/juego/Sakura.java[]
-----
+endif::[]
+ifdef::env-github[]
+contents of include file get added here
+endif::[]
+
 
 *Clase Ninja*
 
